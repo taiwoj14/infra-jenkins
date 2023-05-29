@@ -22,7 +22,7 @@ pipeline {
         
         stage ("plan") {
             steps {
-                sh ('terraform plan -var ACCESS_KEY -var SECRET_KEY') 
+                sh ('terraform plan -var access_key=$ACCESS_KEY -var secret_key=$SECRET_KEY') 
             }
         }
 
