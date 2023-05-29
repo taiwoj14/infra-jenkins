@@ -1,5 +1,10 @@
 pipeline {
     agent any
+    
+    environment {
+      ACCESS_KEY = credentials('karo-ecr')
+        SECRET_KEY = credentials('karo-ecr')
+    }
 
     stages {
         stage('Checkout') {
@@ -17,7 +22,7 @@ pipeline {
         
         stage ("plan") {
             steps {
-                sh ('terraform plan') 
+                sh ('terraform plan -var ACCESS_KEY -var SECRET_KEY') 
             }
         }
 
