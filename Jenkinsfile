@@ -2,8 +2,8 @@ pipeline {
     agent any
     
     environment {
-      ACCESS_KEY = credentials('karo-ecr')
-        SECRET_KEY = credentials('karo-ecr')
+         ACCESS_KEY = credentials('AWS_ACCESS_KEY_ID')
+        SECRET_KEY = credentials('AWS_SECRET_ACCESS_KEY')
     }
 
     stages {
@@ -22,7 +22,7 @@ pipeline {
         
         stage ("plan") {
             steps {
-                sh ('terraform plan -var access_key=$ACCESS_KEY -var secret_key=$SECRET_KEY') 
+                sh ('terraform plan -var 'access_key=$ACCESS_KEY' -var 'secret_key=$SECRET_KEY' ') 
             }
         }
 
