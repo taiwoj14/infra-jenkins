@@ -1,11 +1,6 @@
 pipeline {
     agent any
-    
-    environment {
-         ACCESS_KEY = credentials('AWS_ACCESS_KEY_ID')
-        SECRET_KEY = credentials('AWS_SECRET_ACCESS_KEY')
-    }
-
+  
     stages {
         stage('Checkout') {
             steps {
@@ -22,7 +17,7 @@ pipeline {
         
         stage ("plan") {
             steps {
-                sh ("terraform plan -var 'ACCESS_KEY=AWS_ACCESS_KEY_ID' -var 'SECRET_KEY=AWS_SECRET_ACCESS_KEY' ") 
+                sh ("terraform plan") 
             }
         }
 
