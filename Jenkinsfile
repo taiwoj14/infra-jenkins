@@ -30,12 +30,12 @@ pipeline {
                 sh 'terraform ${action} --auto-approve' 
            }
         }
-       // stage("Deploy to EKS") {
-         //   steps {
-           //        sh "aws eks update-kubeconfig --name eks_cluster"
-             //      sh "kubectl apply -f deployment.yml"
-             //}
-        //}
+        stage("Deploy to EKS") {
+            steps {
+                  sh "aws eks update-kubeconfig --name eks_cluster"
+                   sh "kubectl apply -f deployment.yml"
+             }
+        }
     }
 }
    
