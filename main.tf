@@ -173,7 +173,7 @@ resource "aws_iam_role_policy_attachment" "eks_cluster_role_attachment" {
 }
 
 # Create an EKS cluster
-resource "aws_eks_cluster" "karo_cluster" {
+resource "aws_eks_cluster" "tai_cluster" {
   name     = "eks_cluster"
   role_arn = aws_iam_role.eks_cluster_role.arn
   version  = "1.27"
