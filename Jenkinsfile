@@ -2,14 +2,14 @@ pipeline {
     agent any
    
     environment {
-        AWS_ACCESS_KEY_ID = credentials('TJ_AWS_ACCESS_KEY_ID')
-        AWS_SECRET_ACCESS_KEY = credentials('TJ_AWS_SECRET_ACCESS_KEY')
+        AWS_ACCESS_KEY_ID = credentials('JT_AWS_ACCESS_KEY_ID')
+        AWS_SECRET_ACCESS_KEY = credentials('JT_AWS_SECRET_ACCESS_KEY')
         AWS_DEFAULT_REGION = "us-east-1"
     }
     stages {
         stage('Checkout') {
             steps {
-           git branch: 'main', url: 'https://github.com/ooghenekaro/infra-jenkins.git'
+           git branch: 'main', url: 'https://github.com/taiwoj14/infra-jenkins.git'
   
             }
         }
